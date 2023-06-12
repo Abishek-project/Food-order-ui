@@ -1,55 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_order/constanst.dart';
 
-class Itemcard extends StatelessWidget {
-  final String title, shopname, svgSrc;
-  const Itemcard({
+class ItemCard extends StatelessWidget {
+  final String? title, shopName, svgSrc;
+  final VoidCallback? press;
+  ItemCard({
     Key? key,
-    required this.title,
-    required this.shopname,
-    required this.svgSrc,
+    this.title,
+    this.shopName,
+    this.svgSrc,
+    this.press,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // This size provide you the total height and width of the screen
     Size size = MediaQuery.of(context).size;
     return Container(
-      margin: EdgeInsets.only(top: 20, bottom: 20, right: 15, left: 18),
+      margin: EdgeInsets.only(left: 20, right: 15, top: 20, bottom: 20),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
         color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
         boxShadow: [
           BoxShadow(
-              blurRadius: 20,
-              offset: Offset(0, 4),
-              color: Color(0xFFB0CCE1).withOpacity(0.32)),
+            offset: Offset(0, 4),
+            blurRadius: 20,
+            color: Color(0xFFB0CCE1).withOpacity(0.32),
+          ),
         ],
       ),
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () {},
+          onTap: press,
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20.0),
             child: Column(
-              children: [
+              children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(bottom: 15),
                   padding: EdgeInsets.all(25),
                   decoration: BoxDecoration(
-                      color: kPrimaryColor.withOpacity(0.13),
-                      shape: BoxShape.circle),
+                    color: kPrimaryColor.withOpacity(0.13),
+                    shape: BoxShape.circle,
+                  ),
                   child: SvgPicture.asset(
-                    svgSrc,
+                    svgSrc!,
                     width: size.width * 0.18,
+                    // size.width * 0.18 means it use 18% of total width
                   ),
                 ),
-                Text(title),
-                SizedBox(
-                  height: 10,
+                Text(title!),
+                SizedBox(height: 10),
+                Text(
+                  shopName!,
+                  style: TextStyle(fontSize: 12),
                 ),
-                Text(shopname),
               ],
             ),
           ),
