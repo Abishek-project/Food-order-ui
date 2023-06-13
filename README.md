@@ -1,16 +1,6 @@
-# food_order
+# Food Ordering App - UI
 
-A new Flutter project.
+Our food ordering app offers a seamless and visually appealing user experience. With two main pages, the category page and details page, users can effortlessly explore and order their favorite meals. The category page showcases a variety of enticing food categories, complete with appetizing images and concise descriptions.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Food Ordering App Final UI
+![App UI](/foodUi.png)
