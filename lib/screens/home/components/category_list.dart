@@ -12,7 +12,7 @@ class CategoryList extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           CategoryItem(
             title: "Combo Meals",
             isActive: true,
